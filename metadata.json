@@ -33,6 +33,7 @@
     "newrelic_plugins::aws_cloudwatch": "Installs New Relic AWS Cloudwatch Plugin",
     "newrelic_plugins::example": "Installs New Relic Example Plugin",
     "newrelic_plugins::f5": "Installs New Relic F5 Plugin",
+    "newrelic_plugins::mysql": "Installs New Relic Galera Plugin",
     "newrelic_plugins::mysql": "Installs New Relic MySQL Plugin",
     "newrelic_plugins::memcached_java": "Installs New Relic Memcached Java Plugin",
     "newrelic_plugins::memcached_ruby": "Installs New Relic Memcached Ruby Plugin",

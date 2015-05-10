@@ -4,6 +4,14 @@ default[:newrelic][:aws_cloudwatch][:download_url] = "https://github.com/newreli
 default[:newrelic][:aws_cloudwatch][:install_path] = "/opt/newrelic"
 default[:newrelic][:aws_cloudwatch][:plugin_path]  = "#{node[:newrelic][:aws_cloudwatch][:install_path]}/newrelic_aws_cloudwatch_plugin"
 
+# galera plugin attributes
+default[:newrelic][:galera][:version] = "1.0.0"
+default[:newrelic][:galera][:user] = "root"                #galera auth info is in a conf file controled by this user
+default[:newrelic][:galera][:download_url] = "https://github.com/pythian/newrelic_galera_java_plugin/raw/master/dist/newrelic_galera_plugin-#{node[:newrelic][:galera][:version]}.tar.gz"
+default[:newrelic][:galera][:install_path] = "/opt/newrelic"
+default[:newrelic][:galera][:plugin_path] = "#{node[:newrelic][:galera][:install_path]}/newrelic_galera_plugin"
+default[:newrelic][:galera][:java_options] = '-Xmx128m'
+
 # mysql plugin attributes
 default[:newrelic][:mysql][:version] = "2.0.0"
 default[:newrelic][:mysql][:user] = "root"                #mysql auth info is in a conf file controled by this user

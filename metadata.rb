@@ -9,6 +9,7 @@ version           '1.1.0'
 recipe 'newrelic_plugins::aws_cloudwatch', 'Installs New Relic AWS Cloudwatch Plugin'
 recipe 'newrelic_plugins::example', 'Installs New Relic Example Plugin'
 recipe 'newrelic_plugins::f5', 'Installs New Relic F5 Plugin'
+recipe 'newrelic_plugins::galera', 'Installs New Relic Galera Plugin'
 recipe 'newrelic_plugins::mysql', 'Installs New Relic MySQL Plugin'
 recipe 'newrelic_plugins::memcached_java', 'Installs New Relic Memcached Java Plugin'
 recipe 'newrelic_plugins::memcached_ruby', 'Installs New Relic Memcached Ruby Plugin'
@@ -29,6 +30,7 @@ attribute 'newrelic/license_key',
     'newrelic_plugins::aws_cloudwatch',
     'newrelic_plugins::example',
     'newrelic_plugins::f5',
+    'newrelic_plugins::galera',    
     'newrelic_plugins::mysql',
     'newrelic_plugins::memcached_java',
     'newrelic_plugins::memcached_ruby',
@@ -116,6 +118,35 @@ attribute 'newrelic/f5/agents',
   :type => 'array',
   :required => 'required',
   :recipes => ['newrelic_plugins::f5']
+
+attribute 'newrelic/galera/install_path',
+  :display_name => 'New Relic Galera Plugin Install Path',
+  :description => 'Install Path for New Relic Galera Plugin',
+  :type => 'string',
+  :required => 'required',
+  :default => '/opt/newrelic',
+  :recipes => ['newrelic_plugins::galera']
+
+attribute 'newrelic/galera/user',
+  :display_name => 'New Relic Galera Plugin User',
+  :description => 'User to run as for New Relic Galera Plugin',
+  :type => 'string',
+  :required => 'required',
+  :recipes => ['newrelic_plugins::galera']
+
+attribute 'newrelic/galera_plugin/servers',
+  :display_name => 'New Relic Galera Plugin Server Configurations',
+  :description => 'Server Configurations for New Relic Galera Plugin',
+  :type => 'array',
+  :required => 'required',
+  :recipes => ['newrelic_plugins::galera']
+
+attribute 'newrelic/galera_plugin/java_options',
+  :display_name => 'New Relic Galera Plugin Java Command Options',
+  :description => 'Java command options for New Relic Galera Plugin',
+  :type => 'string',
+  :required => 'optional',
+  :recipes => ['newrelic_plugins::galera']
 
 attribute 'newrelic/mysql/install_path',
   :display_name => 'New Relic MySQL Plugin Install Path',
